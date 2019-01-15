@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Text;
 using UnityEngine;
 
 [ModTitle("SortInventory")]
@@ -8,7 +6,7 @@ using UnityEngine;
 [ModAuthor("wazupwiop")]
 [ModIconUrl("https://www.raftmodding.com/images/missing.jpg")]
 [ModWallpaperUrl("https://www.raftmodding.com/images/missing.jpg")]
-[ModVersion("0.0.1")]
+[ModVersion("1.1.0")]
 [RaftVersion("Update 8 (3376123)")]
 public class SortInventory : Mod
 {
@@ -23,7 +21,6 @@ public class SortInventory : Mod
         if (CanvasHelper.ActiveMenu == MenuType.Inventory && Input.GetKeyDown(KeyCode.Z)) {
             Network_Player player = RAPI.getLocalPlayer();
             if (player != null) {
-                this.SortPlayerInventory(player);
                 this.SortPlayerInventory(player);
             }
         }
@@ -110,19 +107,18 @@ public class SortInventory : Mod
     private Slot FindSuitableSlot(List<Slot> inv, Item_Base stackableItem = null)
     {
         bool flag = stackableItem != null && stackableItem.settings_Inventory.Stackable;
-        Slot slot = null;
         foreach (Slot slot2 in inv)
         {
-            if (slot2.IsEmpty && slot == null)
+            if (slot2.IsEmpty)
             {
-                slot = slot2;
+                return slot2;
             }
             if (flag && !slot2.StackIsFull() && !slot2.IsEmpty && slot2.itemInstance.UniqueIndex == stackableItem.UniqueIndex)
             {
                 return slot2;
             }
         }
-        return slot;
+        return null;
     }
 
     public void OnModUnload()
