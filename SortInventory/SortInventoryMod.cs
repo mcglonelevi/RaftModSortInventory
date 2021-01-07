@@ -68,7 +68,7 @@ namespace SortInventory
                 Slot currSlot = nonHotbar[i];
                 if (!currSlot.IsEmpty)
                 {
-                    Slot toSlot = this.FindSuitableSlot(nonHotbar, currSlot.GetItemBase());
+                    Slot toSlot = this.FindSuitableSlot(nonHotbar, i, currSlot.GetItemBase());
                     if (toSlot != currSlot && toSlot != null)
                     {
                         this.TransferItems(toSlot, currSlot);
@@ -100,11 +100,12 @@ namespace SortInventory
             }
         }
 
-        private Slot FindSuitableSlot(List<Slot> inv, Item_Base stackableItem = null)
+        private Slot FindSuitableSlot(List<Slot> inv, int currIndex, Item_Base stackableItem = null)
         {
             bool flag = stackableItem != null && stackableItem.settings_Inventory.Stackable;
-            foreach (Slot slot2 in inv)
+            for (var i = 0; i < currIndex; i++)
             {
+                Slot slot2 = inv[i];
                 if (slot2.IsEmpty)
                 {
                     return slot2;
