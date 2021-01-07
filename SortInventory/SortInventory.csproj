@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -8,8 +8,9 @@
     <OutputType>Library</OutputType>
     <RootNamespace>SortInventory</RootNamespace>
     <AssemblyName>SortInventory</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -20,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -29,6 +31,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <AppDesigner Include="Properties\" />
@@ -38,36 +41,52 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>E:\SteamLibrary\steamapps\common\Raft\Raft_Data/Managed/Assembly-CSharp.dll</HintPath>
-      <HintPath Condition="Exists('C:\Program Files (x86)\Steam\steamapps\common\Raft')">C:\Program Files (x86)\Steam\steamapps\common\Raft\Raft_Data\Managed\Assembly-CSharp.dll</HintPath>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\AppData\Roaming\RaftModLoader\binaries\0Harmony.dll</HintPath>
     </Reference>
-    <Reference Include="AssemblyLoader, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath Condition="Exists('..\..\..\..\AppData\Roaming\RaftModLoader')">..\..\..\..\AppData\Roaming\RaftModLoader\binaries\HMLCoreLibrary.dll</HintPath>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>E:\SteamLibrary\steamapps\common\Raft\Raft_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
-    <Reference Include="coremod, Version=0.0.0.1, Culture=neutral, PublicKeyToken=null">
-      <HintPath>E:\SteamLibrary\steamapps\common\Raft\RaftModLoader/coremod.dll</HintPath>
-      <HintPath Condition="Exists('..\..\..\..\AppData\Roaming\RaftModLoader')">..\..\..\..\AppData\Roaming\RaftModLoader\binaries\coremod.dll</HintPath>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>E:\SteamLibrary\steamapps\common\Raft\Raft_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="coremod">
+      <HintPath>..\..\..\..\AppData\Roaming\RaftModLoader\binaries\coremod.dll</HintPath>
+    </Reference>
+    <Reference Include="HMLCoreLibrary">
+      <HintPath>..\..\..\..\AppData\Roaming\RaftModLoader\binaries\HMLCoreLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpZipLib">
+      <HintPath>..\..\..\..\AppData\Roaming\RaftModLoader\binaries\SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple">
+      <HintPath>..\..\..\..\AppData\Roaming\RaftModLoader\binaries\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>E:\SteamLibrary\steamapps\common\Raft\Raft_Data/Managed/UnityEngine.CoreModule.dll</HintPath>
       <HintPath Condition="Exists('C:\Program Files (x86)\Steam\steamapps\common\Raft')">C:\Program Files (x86)\Steam\steamapps\common\Raft\Raft_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
-    <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>E:\SteamLibrary\steamapps\common\Raft\Raft_Data/Managed/Assembly-CSharp.dllFIRST</HintPath>
-      <HintPath Condition="Exists('C:\Program Files (x86)\Steam\steamapps\common\Raft')">C:\Program Files (x86)\Steam\steamapps\common\Raft\Raft_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine">
       <HintPath>E:\SteamLibrary\steamapps\common\Raft\Raft_Data/Managed/UnityEngine.dll</HintPath>
       <HintPath Condition="Exists('C:\Program Files (x86)\Steam\steamapps\common\Raft')">C:\Program Files (x86)\Steam\steamapps\common\Raft\Raft_Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>E:\SteamLibrary\steamapps\common\Raft\Raft_Data/Managed/UnityEngine.dll_UI</HintPath>
-      <HintPath Condition="Exists('C:\Program Files (x86)\Steam\steamapps\common\Raft')">C:\Program Files (x86)\Steam\steamapps\common\Raft\Raft_Data\Managed\UnityEngine.UI.dll</HintPath>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\Raft\Raft_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\Raft\Raft_Data\Managed\UnityEngine.InputModule.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="modinfo.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>call cd $(SolutionDir)
+start build.bat
+echo 🔰 =============== 🔰 MOD BUILD SCRIPT 🔰 =============== 🔰
+echo ✔️ Mod successfully built as $(SolutionDir)$(ProjectName).rmod ✔️
+echo ===========================================================
+</PostBuildEvent>
+  </PropertyGroup>
 </Project>

@@ -2,11 +2,11 @@
   "name": "SortInventory",
   "author": "wazupwiop and traxam",
   "description": "A mod that will use a hotkey to sort inventory.",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "license": "MIT",
   "icon": "icon.png",
   "banner": "banner.png",
-  "gameVersion": "Update 11 (4677160)",
+  "gameVersion": "Update 12.01 (5720064)",
   "updateUrl": "https://www.raftmodding.com/api/v1/mods/sortinventory/version.txt",
   "isModPermanent": false,
   "excludedFiles": []
