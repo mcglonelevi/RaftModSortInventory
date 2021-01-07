@@ -50,8 +50,8 @@ namespace SortInventory
                 // Reset the slot.
                 slot.Reset();
             }
-
-            tempInstances.Sort((x, y) => String.Compare(x.UniqueName, y.UniqueName, StringComparison.Ordinal));
+            
+            tempInstances.Sort((x, y) => String.Compare(x.settings_Inventory.DisplayName, y.settings_Inventory.DisplayName, StringComparison.Ordinal));
 
             // Do some assignments to sort it in the inventory
             var i = 0;
