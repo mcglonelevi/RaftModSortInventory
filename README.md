@@ -1,6 +1,12 @@
+# PLEASE READ
+
+## This is no longer maintained.  Please see made-by-traxam's fork here: https://github.com/made-by-traxam/RaftModSortInventory
+
+---------------------
+
 ![banner image](./SortInventory/banner.png)
 
-# SortInventory - Sort your inventory!
+# (Deprecated) SortInventory - Sort your inventory!
 *([view on RaftModding](https://www.raftmodding.com/mods/sortinventory))*
 
 This is a mod for Raft, a Unity-based game on Steam.  Open your inventory and press 'Z' to have your your inventory (minus hotbar) and any chests you have open to be automatically compressed sorted.
